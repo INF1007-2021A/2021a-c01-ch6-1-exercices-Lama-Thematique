@@ -1,55 +1,10 @@
-test_anagram (__main__.TestExercice) ... FAIL
-test_doubles (__main__.TestExercice) ... FAIL
+test_anagram (__main__.TestExercice) ... ok
+test_doubles (__main__.TestExercice) ... ok
 test_frequence (__main__.TestExercice) ... ok
 test_grades (__main__.TestExercice) ... ok
-test_order (__main__.TestExercice) ... FAIL
-
-======================================================================
-FAIL: test_anagram (__main__.TestExercice)
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "test_exercice.py", line 37, in test_anagram
-    self.assertEqual(
-AssertionError: Lists differ: [True, True] != [True, False]
-
-First differing element 1:
-True
-False
-
-- [True, True]
-+ [True, False] : Erreur dans la vérification de l'anagramme
-
-======================================================================
-FAIL: test_doubles (__main__.TestExercice)
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "test_exercice.py", line 52, in test_doubles
-    self.assertListEqual(
-AssertionError: Lists differ: [True, False] != [False, True]
-
-First differing element 0:
-True
-False
-
-- [True, False]
-+ [False, True] : Erreur dans les doublons
-
-======================================================================
-FAIL: test_order (__main__.TestExercice)
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "test_exercice.py", line 22, in test_order
-    self.assertListEqual(
-AssertionError: Lists differ: [None, None] != [[-2, 1, 6, 9], ['2', 'a', 'hello']]
-
-First differing element 0:
-None
-[-2, 1, 6, 9]
-
-- [None, None]
-+ [[-2, 1, 6, 9], ['2', 'a', 'hello']] : Mauvais ordre
+test_order (__main__.TestExercice) ... ok
 
 ----------------------------------------------------------------------
-Ran 5 tests in 0.001s
+Ran 5 tests in 0.000s
 
-FAILED (failures=3)
+OK
