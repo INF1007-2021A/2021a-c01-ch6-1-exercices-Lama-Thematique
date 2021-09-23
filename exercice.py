@@ -15,7 +15,7 @@ def order(values: list = None) -> list:
                 l2.append(e)
 
         return l2.sort()
-    return values.sort()
+    return sorted(values)
 
 
 def anagrams(words: list = None) -> bool:
@@ -30,7 +30,7 @@ def anagrams(words: list = None) -> bool:
             dict1[c] = 1
     
     dict2 = {}
-    for c in words[0]:
+    for c in words[1]:
         if(c in dict2.keys()):
             dict2[c] += 1
         else :
@@ -40,7 +40,7 @@ def anagrams(words: list = None) -> bool:
 
 
 def contains_doubles(items: list) -> bool:
-    return len(items) == len(set(items))
+    return len(items) != len(set(items))
 
 
 
