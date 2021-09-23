@@ -4,44 +4,83 @@
 
 def order(values: list = None) -> list:
     if values is None:
-        # TODO: demander les valeurs ici
-        pass
+        values = [input("Element : ") for i in range(10)]
+        l2 = []
+        for e in values:
+            if(e.isnumeric()):
+                l2.append(int(e))
+            if(e.isdecimal()):
+                l2.append(float(e))
+            else:
+                l2.append(e)
 
-    return []
+        return l2.sort()
+    return values.sort()
 
 
 def anagrams(words: list = None) -> bool:
     if words is None:
-        # TODO: demander les mots ici
+        words = [input("Element : ") for i in range(2)]
         pass
+    dict1 = {}
+    for c in words[0]:
+        if(c in dict1.keys()):
+            dict1[c] += 1
+        else :
+            dict1[c] = 1
+    
+    dict2 = {}
+    for c in words[0]:
+        if(c in dict2.keys()):
+            dict2[c] += 1
+        else :
+            dict2[c] = 1
 
-    return False
+    return dict2==dict1
 
 
 def contains_doubles(items: list) -> bool:
-    return False
+    return len(items) == len(set(items))
+
 
 
 def best_grades(student_grades: dict) -> dict:
     # TODO: Retourner un dictionnaire contenant le nom de l'étudiant ayant la meilleure moyenne ainsi que sa moyenne
-    return {}
+    maxname = list(student_grades.keys())[0]
+    for name, grades in student_grades.items():
+        if(sum(grades)/len(grades) >= sum(student_grades[maxname])/len(student_grades[maxname])) : 
+            maxname = name
+    return {maxname: sum(student_grades[maxname])/len(student_grades[maxname])}
 
 
 def frequence(sentence: str) -> dict:
-    # TODO: Afficher les lettres les plus fréquentes
-    #       Retourner le tableau de lettres
+    dict1 = {}
+    for c in sentence:
+        if(c in dict1.keys()):
+            dict1[c] += 1
+        else :
+            dict1[c] = 1
+    chars = dict1.keys()
+    res = sorted(chars, key = lambda ele: dict1[ele])
+    for i in range(5):
+        print(res[i])
 
-    return {}
+    return dict1
 
 
 def get_recipes():
-    # TODO: Demander le nom d'une recette, puis ses ingredients et enregistrer dans une structure de données
-    pass
+    recette = input("nom de la recette :")
+    dict1 = {recette: []}
+    ingredient = input("ingrédiant (\"None pour finir la saisie\"):")
+    while ingredient != "None":
+        dict1[recette].append(ingredient)
+        ingredient = input("ingrédiant (\"None pour finir la saisie\"):")
+    
+    return dict1
 
 
 def print_recipe(ingredients) -> None:
-    # TODO: Demander le nom d'une recette, puis l'afficher si elle existe
-    pass
+    [print(ingredient) for ingredient in ingredients[input("nom de la recette :")]]
 
 
 def main() -> None:
